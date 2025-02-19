@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workouts</title>
+</head>
+<body>
+    <a href="/users/<%=user._id%>/workouts/new">Add a Workout</a>
+
+
+    <% if (workouts.length > 0) { %>
+        <ul>
+            <% workouts.forEach(workout => { %>
+                <li>
+                    <strong>Name:</strong> <%= workout.name %> <br>
+                    <strong>Duration:</strong> <%= workout.duration %> minutes <br>
+                    <strong>Date:</strong> <%= workout.date %> <br>
+                    <strong>Notes:</strong> <%= workout.notes %>
+                </li>
+           <% }) %>
+
+        </ul>
+        <% } else { %>
+            <p>No workouts available.</p>
+        <% } %>
+    <%- include('../partials/_backHome.ejs')%>
+
+</body>
+</html>

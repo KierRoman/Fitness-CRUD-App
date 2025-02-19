@@ -7,11 +7,13 @@
 </head>
 <body>
     <%- include('./partials/_navbar.ejs') %>
-    <h1>Welcome to the worlds most okay fitness app!</h1>
+    <h1>The worlds okayest fitness app!</h1>
     <% if (user) { %>
+        <a href="/users/<%= user._id %>/exercises">Exercises</a>
         <a href="/users/<%= user._id %>/workouts">Workouts</a>
       <% } else { %>
         <p>Please sign in to view your workouts.</p>
       <% } %>
+
 </body>
 </html>
