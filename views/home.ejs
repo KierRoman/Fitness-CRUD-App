@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <%- include('./partials/_navbar.ejs') %>
+    <h1>Welcome to the worlds most okay fitness app!</h1>
+    <% if (user) { %>
+        <a href="/users/<%= user._id %>/workouts">Workouts</a>
+      <% } else { %>
+        <p>Please sign in to view your workouts.</p>
+      <% } %>
+</body>
+</html>
