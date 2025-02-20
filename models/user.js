@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const exercisesSchema = new mongoose.Schema({
     category: {
         type: String,
-        enum: ['weights','cardio'],
+        enum: ['weights', 'cardio'],
         required: true
     },
     name: {
@@ -40,7 +40,7 @@ const workoutsSchema = new mongoose.Schema({
     notes: {
         type: String,
     },
-    exercises: [exercisesSchema]
+
 })
 
 
@@ -56,7 +56,8 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    workouts: [workoutsSchema]
+    workouts: [workoutsSchema],
+    exercises: [exercisesSchema]
 })
 
 const User = mongoose.model('User', userSchema)

@@ -19,10 +19,12 @@ res.render('workouts/index.ejs', {workouts: allWorkouts})
 
 //NEW
 router.get('/new', async (req, res) => {
-    const user = await User.findById(req.params.userId)
+    const user = await User.findById(req.session.user._id)
+    const workouts = user.workouts.id(req.params.workoutId)
     // const exercises = await User.workouts.exercises.find()
     res.render('workouts/new.ejs', {
-        // exercises: exercises,
+        user: user,
+    workouts: workouts
     })
 })
 
@@ -35,9 +37,8 @@ router.get('/new', async (req, res) => {
 
 //CREATE
 router.post('/', async (req, res) => {
-    const user = await User.findById(req.params.userId)
-    
-
+    const user = await User.findById(req.session.user._id)
+    user.workouts.push(req.body)
         await user.save()
         res.redirect(`/users/${user._id}/workouts`)
 
@@ -48,5 +49,16 @@ router.post('/', async (req, res) => {
 
 
 //SHOW
+router.get('/:workoutId/', async (req, res) => {
+    const user = await User.findById(req.session.user._id)
+    const workouts = user.workouts.id(req.params.workoutId)
+    const exercises = workouts.exercises || []
+    res.render('workouts/show.ejs', {
+        workouts: workouts,
+        exercises: exercises
+    })
+})
+
+
 
 module.exports = router

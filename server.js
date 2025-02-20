@@ -12,6 +12,7 @@ const passUserToView = require('./middleware/pass-user-to-view.js');
 const authController = require('./controllers/auth.js')
 const workoutsController = require('./controllers/workouts.js')
 const exercisesController = require('./controllers/exercises.js')
+const User = require('./models/user.js')
 
 
 const port = process.env.PORT ? process.env.PORT : '3000'
@@ -37,10 +38,13 @@ app.use(passUserToView)
 
 
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
+    const user = await User.findById(req.session.user)
+
     res.render('home.ejs', {
-        user: req.session.user,
+        user: user,
     })
+    // console.log(user.workouts)
 })
 
 
@@ -48,7 +52,7 @@ app.get('/', (req, res) => {
 app.use('/auth', authController)
 app.use(isSignedIn)
 app.use('/users/:userId/workouts', workoutsController)
-app.use('/users/:userId/exercises', exercisesController)
+app.use('/users/:userId/workouts/:workoutId/exercises', exercisesController)
 
 
 app.listen(port, () => {
