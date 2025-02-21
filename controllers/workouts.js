@@ -19,7 +19,6 @@ router.get('/', async (req, res) => {
 router.get('/new', async (req, res) => {
     const user = await User.findById(req.session.user._id)
     const workouts = user.workouts.id(req.params.workoutId)
-    // const exercises = await User.workouts.exercises.find()
     res.render('workouts/new.ejs', {
         user: user,
         workouts: workouts
@@ -48,7 +47,7 @@ router.delete('/:workoutId/exercises/:exerciseId', async (req, res) => {
     const workouts = user.workouts.id(req.params.workoutId)
     const exercises = workouts.exercises.id(req.params.exerciseId)
     workouts.exercises.pull(exercises._id)
-        await user.save()
+    await user.save()
     res.redirect(`/users/${user._id}/workouts/${workouts._id}`)
 })
 
@@ -132,17 +131,6 @@ router.get('/:workoutId', async (req, res) => {
     })
 })
 
-// router.get('/:workoutId/exercises', async (req, res) => {
-//     const user = await User.findById(req.session.user._id);
-//     const workouts = user.workouts.id(req.params.workoutId); // Get the specific workouts
-//     // const exercises = workouts.exercises; // Get the exercises associated with this workouts
-//     const exercises = user.exercises || []
-//     res.render('workouts/exercises/index.ejs', {
-//         user: user,
-//         workouts: workouts,   // Pass the specific workout
-//         exercises: exercises
-//     })
-// })
 
 
 module.exports = router

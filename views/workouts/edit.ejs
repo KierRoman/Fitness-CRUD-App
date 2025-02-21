@@ -4,13 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%=workouts.name%></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>
+        <%=workouts.name%>
+    </title>
 </head>
 
 <body>
     <form action="/users/<%= user._id %>/workouts/<%=workouts._id%>?_method=PUT" method="POST">
-        <div> <button type="button" onclick="window.history.back();">Back</button>
-             <button type="submit">Update</button>
+        <div> <button type="button" onclick="window.history.back();"><i class="fa-solid fa-left-long"></i></button>
+            <button type="submit"><i class="fa-solid fa-cloud-arrow-up"></i></button>
         </div>
 
         <div>
@@ -30,8 +35,8 @@
             <label for="date">Date</label>
             <input type="date" name="date" value="<%=workouts.date.toISOString().split('T')[0]%>">
         </div>
-        
-       
+
+
     </form>
 
 </body>

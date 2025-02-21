@@ -2,8 +2,8 @@
 
 <nav>
     <% if(user) { %>
-        <a href="/users/<%=user._id %>/workouts">Your Workouts</a>
-        <a href="/auth/sign-out">Sign Out</a>
+        <a href="/users/<%=user._id %>/workouts"><i class="fa-solid fa-dumbbell"></i></a>
+        <a href="/auth/sign-out"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
         <% } else { %>
             <a href="/auth/sign-in">Sign In</a>
             <a href="/auth/sign-up">Sign Up</a>

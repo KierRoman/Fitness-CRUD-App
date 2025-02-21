@@ -57,7 +57,7 @@ const userSchema = new mongoose.Schema({
         required: true,
     },
     workouts: [workoutsSchema],
-    
+
 })
 
 const User = mongoose.model('User', userSchema)

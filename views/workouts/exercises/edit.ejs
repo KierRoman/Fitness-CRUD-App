@@ -4,20 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%=exercises.name%></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>
+        <%=exercises.name%>
+    </title>
 </head>
 
 <body>
     <h1>Exercises</h1>
-    <form action="/users/<%= user._id %>/workouts/<%=workouts._id%>/exercises/<%=exercises._id%>?_method=PUT" method="POST">
-        <div> <button type="button" onclick="window.history.back();">Back</button>
-            <button type="submit">Update</button>
+    <form action="/users/<%= user._id %>/workouts/<%=workouts._id%>/exercises/<%=exercises._id%>?_method=PUT"
+        method="POST">
+        <div> <button type="button" onclick="window.history.back();"><i class="fa-solid fa-left-long"></i></button>
+            <button type="submit"><i class="fa-solid fa-cloud-arrow-up"></i></button>
         </div>
         <div>
             <label for="category">Category:</label>
             <select name="category" id="category">
-                <option value="weights" <%= exercises.category === 'weights' ? 'selected' : '' %>>Weights</option>
-                <option value="cardio" <%= exercises.category === 'cardio' ? 'selected' : '' %>>Cardio</option>
+                <option value="weights" <%=exercises.category==='weights' ? 'selected' : '' %>>Weights</option>
+                <option value="cardio" <%=exercises.category==='cardio' ? 'selected' : '' %>>Cardio</option>
             </select>
         </div>
         <label for="name">Exercise Name:</label><br>
