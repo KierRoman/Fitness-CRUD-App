@@ -11,7 +11,7 @@ const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
 const authController = require('./controllers/auth.js')
 const workoutsController = require('./controllers/workouts.js')
-const exercisesController = require('./controllers/exercises.js')
+// const exercisesController = require('./controllers/exercises.js')
 const User = require('./models/user.js')
 
 
@@ -52,7 +52,7 @@ app.get('/', async (req, res) => {
 app.use('/auth', authController)
 app.use(isSignedIn)
 app.use('/users/:userId/workouts', workoutsController)
-app.use('/users/:userId/workouts/:workoutId/exercises', exercisesController)
+// app.use('/users/:userId/workouts/:workoutId/exercises', exercisesController)
 
 
 app.listen(port, () => {

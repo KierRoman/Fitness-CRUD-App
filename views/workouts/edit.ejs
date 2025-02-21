@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=workouts.name%></title>
+</head>
+
+<body>
+    <form action="/users/<%= user._id %>/workouts/<%=workouts._id%>?_method=PUT" method="POST">
+        <div> <button type="button" onclick="window.history.back();">Back</button>
+             <button type="submit">Update</button>
+        </div>
+
+        <div>
+            <label for="name">Name of Workout:</label>
+            <input type="text" name="name" id="name" value="<%=workouts.name%>">
+            <br>
+            <label for="notes">Notes:</label>
+            <textarea name="notes" id="notes">
+                 <%=workouts.notes%>
+            </textarea>
+        </div>
+        <div>
+            <label for="duration">Duration of Workout:</label>
+            <input type="number" name="duration" id="duration" value="<%=workouts.duration%>">
+        </div>
+        <div>
+            <label for="date">Date</label>
+            <input type="date" name="date" value="<%=workouts.date.toISOString().split('T')[0]%>">
+        </div>
+        
+       
+    </form>
+
+</body>
+
+</html>

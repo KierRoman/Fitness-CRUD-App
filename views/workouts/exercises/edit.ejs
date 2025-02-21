@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=exercises.name%></title>
+</head>
+
+<body>
+    <h1>Exercises</h1>
+    <form action="/users/<%= user._id %>/workouts/<%=workouts._id%>/exercises/<%=exercises._id%>?_method=PUT" method="POST">
+        <div> <button type="button" onclick="window.history.back();">Back</button>
+            <button type="submit">Update</button>
+        </div>
+        <div>
+            <label for="category">Category:</label>
+            <select name="category" id="category">
+                <option value="weights" <%= exercises.category === 'weights' ? 'selected' : '' %>>Weights</option>
+                <option value="cardio" <%= exercises.category === 'cardio' ? 'selected' : '' %>>Cardio</option>
+            </select>
+        </div>
+        <label for="name">Exercise Name:</label><br>
+        <input type="text" name="name" value="<%=exercises.name%>" required><br>
+
+        <label for="reps">Reps:</label><br>
+        <input type="number" name="reps" value="<%=exercises.reps%>"><br>
+
+        <label for="sets">Sets:</label><br>
+        <input type="number" name="sets" value="<%=exercises.sets%>"><br>
+
+        <label for="duration">Duration (minutes, for cardio):</label><br>
+        <input type="number" name="duration" value="<%=exercises.duration%>"><br>
+
+        <label for="notes">Notes:</label><br>
+        <textarea name="notes"><%= exercises.notes%></textarea>
+    </form>
+
+
+</body>
+
+</html>

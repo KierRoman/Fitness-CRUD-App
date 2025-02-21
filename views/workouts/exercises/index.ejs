@@ -11,50 +11,7 @@
 
     <a href="/users/<%=user._id%>/workouts/<%=workouts._id%>/exercises/new">Add a Exercise</a>
     
-
-    <% if (exercises.length> 0) { %>
-        <ul>
-            <% exercises.forEach(exercise=> { %>
-                <li>
-                    <% if (exercise.name) { %>
-                        <strong>Name:</strong>
-                        <%= exercise.name %><br>
-                            <% } %>
-
-                                <% if (exercise.category) { %>
-                                    <strong>Category:</strong>
-                                    <%= exercise.category %><br>
-                                        <% } %>
-
-                                            <% if (exercise.reps) { %>
-                                                <strong>Reps:</strong>
-                                                <%= exercise.reps %><br>
-                                                    <% } %>
-
-                                                        <% if (exercise.sets) { %>
-                                                            <strong>Sets:</strong>
-                                                            <%= exercise.sets %><br>
-                                                                <% } %>
-
-                                                                    <% if (exercise.duration) { %>
-                                                                        <strong>Duration:</strong>
-                                                                        <%= exercise.duration %> minutes<br>
-                                                                            <% } %>
-
-                                                                                <% if (exercise.notes) { %>
-                                                                                    <strong>Notes:</strong>
-                                                                                    <%= exercise.notes %><br>
-                                                                                        <% } %>
-
-                </li>
-                <% }) %>
-        </ul>
-        <% } else { %>
-            <p>No exercises available.</p>
-            <% } %>
-
-                <%- include('../partials/_backHome.ejs')%>
-
+                        <button type="button" onclick="window.history.back();">Back</button>
 </body>
 
 </html>

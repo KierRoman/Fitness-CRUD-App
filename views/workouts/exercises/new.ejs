@@ -9,7 +9,7 @@
 
 <body>
     <h1>Exercises</h1>
-    <form action="/users/<%= user._id %>/workouts/" method="POST">
+    <form action="/users/<%= user._id %>/workouts/<%=workouts._id%>/" method="POST">
         <div> <button type="button" onclick="window.history.back();">Back</button>
             <button type="submit">Add</button>
         </div>

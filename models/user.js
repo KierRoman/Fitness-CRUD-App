@@ -40,7 +40,7 @@ const workoutsSchema = new mongoose.Schema({
     notes: {
         type: String,
     },
-
+    exercises: [exercisesSchema]
 })
 
 
@@ -57,7 +57,7 @@ const userSchema = new mongoose.Schema({
         required: true,
     },
     workouts: [workoutsSchema],
-    exercises: [exercisesSchema]
+    
 })
 
 const User = mongoose.model('User', userSchema)
