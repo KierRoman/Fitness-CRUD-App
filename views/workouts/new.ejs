@@ -5,38 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>New Workout</title>
 </head>
 
 <body>
-    <form action="/users/<%= user._id %>/workouts" method="POST">
-        <div> <button type="button" onclick="window.history.back();"><i class="fa-solid fa-left-long"></i></button>
-            <button type="submit"><i class="fa-solid fa-plus"></i></button>
-        </div>
+    <div id="new-body">
+        <form action="/users/<%= user._id %>/workouts" method="POST">
+            <div class="form-buttons"> <button type="button" onclick="window.history.back();"><i
+                        class="fa-solid fa-left-long"></i></button>
+                <button type="submit"><i class="fa-solid fa-plus"></i></button>
+            </div>
 
-        <div>
-            <label for="name">Name of Workout:</label>
-            <input type="text" name="name" id="name">
-            <br>
-            <label for="notes">Notes:</label>
-            <textarea name="notes" id="notes"></textarea>
-        </div>
-        <div>
-            <label for="duration">Duration of Workout:</label>
-            <input type="number" name="duration" id="duration" placeholder="In minutes...">
-        </div>
-        <div>
-            <label for="date">Date</label>
-            <input type="date" name="date">
-        </div>
-        <div>
-            <label for="exercises"></label>
-        </div>
+            <div class="form-buttons">
+                <label for="name">Name of Workout: </label>
+                <input type="text" name="name" id="name">
+                <br>
+                <label for="notes">Notes: </label>
+                <textarea name="notes" id="notes"></textarea>
+            </div>
+            <div class="form-buttons">
+                <label for="duration">Duration of Workout:</label>
+                <input type="number" name="duration" id="duration" placeholder="In minutes...">
+            </div>
+            <div class="form-buttons">
+                <label for="date">Date</label>
+                <input type="date" name="date">
+            </div>
 
-    </form>
 
+        </form>
+    </div>
 </body>
 
 </html>

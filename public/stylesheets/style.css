@@ -1,0 +1,316 @@
+#home-body{
+    background-image: url(https://t3.ftcdn.net/jpg/04/29/35/62/360_F_429356296_CVQ5LkC6Pl55kUNLqLisVKgTw9vjyif1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 3px solid rgba(255, 0, 0, 0.576);
+    border-radius: 15px;
+    max-width: 60vw;
+    min-height: 40vh;
+    margin: 0 auto;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+    
+
+}
+#wrk-name{
+    margin: 0 auto;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#add-work{
+    text-align: center;
+    padding: 5px;
+}
+
+
+#workouts-body{
+    position: relative;
+    background-image: url(https://t3.ftcdn.net/jpg/03/03/44/82/360_F_303448274_0N7iYpZ7B8Er3z7iDRa70zhxihGfjpNZ.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+    /* padding-left: 10px; */
+    max-height: 60vh;
+    max-width: 50vw;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* border: 2px solid darkred; */
+    border-radius: 15px;
+    overflow: auto;
+    overflow-x: hidden;
+    
+}
+
+#workouts-body::before {
+    content: ""; /* Necessary to generate the overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* This adds the dim effect */
+    border-radius: 15px; /* Match the border radius to the container */
+}
+
+/* Content within the #workouts-body container */
+#workouts-body > * {
+    position: relative;
+    z-index: 1; /* Ensure content sits above the overlay */
+}
+
+
+#workouts-body p {
+    text-align: center;
+    border-radius: 15px;
+    margin: auto;
+    max-width: 30vw;
+    background-color: rgba(130, 0, 0, 0.341);
+}
+
+#workouts-body::-webkit-scrollbar, #show-body::-webkit-scrollbar{
+    display: none;
+}
+
+
+
+#workouts-body div {
+    /* background-color: blueviolet; */
+    display: flex;
+    flex-wrap: wrap;
+    /* gap: 10px; */
+    justify-content: space-evenly;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    align-content: center;
+}
+
+#show-body{
+    position: relative;
+    background-image: url(https://t3.ftcdn.net/jpg/03/03/44/82/360_F_303448274_0N7iYpZ7B8Er3z7iDRa70zhxihGfjpNZ.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    margin: 0 auto;
+    max-height: 60vh;
+    max-width: 50vw;
+    /* display: flex; */
+    /* flex-direction: column; */
+    align-items: center;
+    /* border: 2px solid darkred; */
+    border-radius: 15px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+#show-body::before {
+    content: ""; /* Necessary to generate the overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* This adds the dim effect */
+    border-radius: 15px; /* Match the border radius to the container */
+}
+
+/* Content within the #workouts-body container */
+#show-body > * {
+    position: relative;
+    z-index: 1; /* Ensure content sits above the overlay */
+}
+
+#show-body p {
+    text-align: center;
+    border-radius: 15px;
+    margin: auto;
+    max-width: 30vw;
+    background-color: rgba(130, 0, 0, 0.341);
+}
+
+#show-body div {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    align-content: center;
+}
+
+#show-a{
+display: flex;
+justify-content: center;
+}
+
+#new{
+    text-align: center;
+}
+
+
+#new-body{
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(231, 4, 4, 0.632);
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    
+}
+
+.form-buttons {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#new-ex-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgba(119, 0, 0, 0.598); */
+    box-shadow: 0 4px 12px rgba(231, 4, 4, 0.632);
+    max-width: 50vw;
+    border-radius: 20px;
+    padding: 2px;
+    margin: 0 auto;
+}
+
+#new-btns{
+    padding: .5em;
+    display: flex;
+    justify-content: space-between;
+}
+
+a{
+    text-align: center;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+
+#textarea{
+    min-height: 20vh;
+    color: white;
+}
+
+a:hover{
+    color: red;
+}
+
+#back{
+    border: transparent;
+    background-color: transparent;
+    transition: color 0.3s ease;
+}
+
+#back:hover{
+    color: red;
+}
+ul{
+    padding: 0%;
+}
+
+button{
+    background-color: darkred;
+    border: none;
+    padding: 5px 7.5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.5s ease;
+
+}
+button:hover{
+    background-color: rgb(180, 5, 5);
+}
+
+nav i {
+    box-shadow: 0 2px 3px 2px rgba(255, 0, 0, 0.576);
+}
+
+
+
+
+
+
+input[type="text"],
+input[type="number"],
+textarea,
+input[type="date"],
+input[type="password"] {
+    width: 90%;
+    padding: 5px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+input[type="date"]:focus,
+input[type="password"]:focus 
+{
+    border-color: #4CAF50;
+    outline: none;
+}
+
+textarea {
+    min-height: 120px;
+}
+
+label {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 5px;
+    font-weight: bold;
+    display: block;
+}
+
+
+input[type="text"]:hover,
+input[type="number"]:hover,
+textarea:hover,
+input[type="date"]:hover,
+input[type="password"]:hover {
+    border-color: #4CAF50;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #new-body {
+        max-width: 90vw;
+        padding: 15px;
+    }
+
+    button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    textarea {
+        font-size: 14px;
+    }
+}

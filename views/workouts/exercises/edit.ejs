@@ -7,16 +7,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>
         <%=exercises.name%>
     </title>
 </head>
 
 <body>
-    <h1>Exercises</h1>
+    <h1 id="new">Exercises</h1>
+    <div id="new-ex-body">
     <form action="/users/<%= user._id %>/workouts/<%=workouts._id%>/exercises/<%=exercises._id%>?_method=PUT"
         method="POST">
-        <div> <button type="button" onclick="window.history.back();"><i class="fa-solid fa-left-long"></i></button>
+        <div id="new-btns"> <button type="button" onclick="window.history.back();"><i class="fa-solid fa-left-long"></i></button>
             <button type="submit"><i class="fa-solid fa-cloud-arrow-up"></i></button>
         </div>
         <div>
@@ -25,23 +27,23 @@
                 <option value="weights" <%=exercises.category==='weights' ? 'selected' : '' %>>Weights</option>
                 <option value="cardio" <%=exercises.category==='cardio' ? 'selected' : '' %>>Cardio</option>
             </select>
-        </div>
-        <label for="name">Exercise Name:</label><br>
-        <input type="text" name="name" value="<%=exercises.name%>" required><br>
+        </div><br>
+        <label for="name">Exercise Name:</label>
+        <input type="text" name="name" value="<%=exercises.name%>" required>
 
-        <label for="reps">Reps:</label><br>
-        <input type="number" name="reps" value="<%=exercises.reps%>"><br>
+        <label for="reps">Reps:</label>
+        <input type="number" name="reps" value="<%=exercises.reps%>">
 
-        <label for="sets">Sets:</label><br>
-        <input type="number" name="sets" value="<%=exercises.sets%>"><br>
+        <label for="sets">Sets:</label>
+        <input type="number" name="sets" value="<%=exercises.sets%>">
 
-        <label for="duration">Duration (minutes, for cardio):</label><br>
-        <input type="number" name="duration" value="<%=exercises.duration%>"><br>
+        <label for="duration">Duration (minutes, for cardio):</label>
+        <input type="number" name="duration" value="<%=exercises.duration%>">
 
-        <label for="notes">Notes:</label><br>
-        <textarea name="notes"><%= exercises.notes%></textarea>
+        <label for="notes">Notes:</label>
+        <textarea id="textarea" name="notes"><%= exercises.notes%></textarea>
     </form>
-
+    </div>
 
 </body>
 

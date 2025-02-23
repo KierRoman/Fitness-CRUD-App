@@ -5,40 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Exercise List</title>
 </head>
 
 <body>
-    <h1>Exercises</h1>
-    <form action="/users/<%= user._id %>/workouts/<%=workouts._id%>/" method="POST">
-        <div> <button type="button" onclick="window.history.back();"><i class="fa-solid fa-left-long"></i></button>
-            <button type="submit"><i class="fa-solid fa-plus"></i></button>
-        </div>
-        <div>
-            <label for="category">Category:</label>
-            <select name="category" id="category">
-                <option value="weights">Weights</option>
-                <option value="cardio">Cardio</option>
-            </select>
-        </div>
-        <label for="name">Exercise Name:</label><br>
-        <input type="text" name="name" required><br>
+    <h1 id="new">Exercises</h1>
+    <div id="new-ex-body">
+        <form action="/users/<%= user._id %>/workouts/<%=workouts._id%>/" method="POST">
+            <div id="new-btns"> <button type="button" onclick="window.history.back();"><i class="fa-solid fa-left-long"></i></button>
+                <button type="submit"><i class="fa-solid fa-plus"></i></button>
+            </div>
+            <div>
+                <label for="category">Category:</label>
+                <select name="category" id="category">
+                    <option value="weights">Weights</option>
+                    <option value="cardio">Cardio</option>
+                </select>
+            </div><br>
+            <label for="name">Exercise Name:</label>
+            <input type="text" name="name" required><br>
 
-        <label for="reps">Reps:</label><br>
-        <input type="number" name="reps"><br>
+            <label for="reps">Reps:</label>
+            <input type="number" name="reps"><br>
 
-        <label for="sets">Sets:</label><br>
-        <input type="number" name="sets"><br>
+            <label for="sets">Sets:</label>
+            <input type="number" name="sets"><br>
 
-        <label for="duration">Duration (minutes, for cardio):</label><br>
-        <input type="number" name="duration"><br>
+            <label for="duration">Duration (minutes, for cardio):</label><br>
+            <input type="number" name="duration"><br>
 
-        <label for="notes">Notes:</label><br>
-        <textarea name="notes"></textarea>
-    </form>
-
+            <label for="notes">Notes:</label><br>
+            <textarea id="textarea" name="notes"></textarea>
+        </form>
+    </div>
 
 </body>
 

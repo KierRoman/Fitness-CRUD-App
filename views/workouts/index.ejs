@@ -8,42 +8,43 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 
 <body>
-    <a href="/users/<%=user._id%>/workouts/new">Add a Workout</a>
+    <div id="add-work"><a href="/users/<%=user._id%>/workouts/new">Add a Workout</a></div>
+    <div id="workouts-body">
 
 
-    <% if (workouts.length> 0) { %>
-        <ul>
-            <% workouts.forEach(workout=> { %>
-                <li>
-                    <% if(workout.name) {%>
-                        <strong>Name:</strong>
-                        <a href="/users/<%=user._id%>/workouts/<%=workout._id%>">
-                            <%= workout.name %>
-                        </a> <br>
-                        <strong>Name:</strong>
-                        <%= workout.date %> <br>
-                            <div><a href="/users/<%=user._id%>/workouts/<%=workout._id%>/edit">
-                                    <button style="font-size: 10px;"><i class="fa-solid fa-file-pen"></i></button>
-                                </a>
-                                <form action="/users/<%=user._id%>/workouts/<%=workout._id%>?_method=DELETE"
-                                    method="POST">
-                                    <button style="font-size: 10px;"><i class="fa-solid fa-trash"></i></button>
-                                </form>
-                            </div>
-                            <%}%>
+        <% if (workouts.length> 0) { %>
+            <ul>
+                <% workouts.forEach(workout=> { %>
+                    <p>
+                        <% if(workout.name) {%>
+                            <a  id="wrk-name" href="/users/<%=user._id%>/workouts/<%=workout._id%>">
+                                <%= workout.name %>
+                            </a> <br>
+                            <strong>Date:</strong>
+                            <%= new Date(workout.date).toLocaleDateString() %> <br>
+                                <div><a href="/users/<%=user._id%>/workouts/<%=workout._id%>/edit">
+                                        <button style="font-size: 10px;"><i class="fa-solid fa-file-pen"></i></button>
+                                    </a>
+                                    <form action="/users/<%=user._id%>/workouts/<%=workout._id%>?_method=DELETE"
+                                        method="POST">
+                                        <button style="font-size: 10px;"><i class="fa-solid fa-trash"></i></button>
+                                    </form>
+                                </div>
+                                <%}%>
 
-                </li>
-                <% }) %>
+                    </p>
+                    <% }) %>
 
-        </ul>
-        <% } else { %>
-            <p>No workouts available.</p>
-            <% } %>
-                <%- include('../partials/_backHome.ejs')%>
-
+            </ul>
+            <% } else { %>
+                <p>No workouts available.</p>
+                <% } %>
+    </div>
+    <%- include('../partials/_backHome.ejs')%>
 </body>
 
 </html>
