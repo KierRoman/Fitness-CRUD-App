@@ -1,35 +1,17 @@
-#The Okayest Fitness App
+# The Okayest Fitness App
 
-##Table of Contents
+## Table of Contents
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
+- [Attribution](#attribution)
+- [Technologies](#technologies)
+- [Next-Steps](#Next-Steps)
 
 
-//Intro Paragraph//
+Welcome to The Okayest Fitness App, the app that lets you create, update, and delete workouts with ease. Whether you're putting together a new routine or tweaking an old one, FitFlow lets you add exercises, track progress, and keep things simple. No complicated features, just a straightforward way to manage your fitness plans and stay on top of your goals. Ready to get started? Let's build those workouts!
 
-M
 
-M
 
-M
-
-M
-
-M
-
-M
-
-M
-
-M
-
-M
-
-M
-
-## Installation
+## Attribution
 
 
 M
@@ -56,7 +38,7 @@ M
 
 M
 
-## Usage
+## Technologies
 
 M
 
@@ -78,8 +60,8 @@ M
 
 m
 
+## Next-Steps
 
 
 
 
-## Contributing
