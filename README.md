@@ -49,11 +49,13 @@ Here is a list of a few of the icons to make it as easy to understand as possibl
 
 
 Link To Deploy App
+<br>
 ![]()
 
 <br>
 
 My Planning Board
+<br>
 [My_Trello_Board](https://trello.com/invite/b/67b271cd87c212ad418ef466/ATTI3f291c3838246faa6bf0e63d660a9342353303E5/fitness-crud-app)
 
 
