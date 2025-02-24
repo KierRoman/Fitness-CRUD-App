@@ -1,4 +1,4 @@
-![FitApp Display / Sign In Page]("FitApp.png")
+![FitApp-Display/Sign-In-Page]("FitApp.png")
 
 
 # The Okayest Fitness App
