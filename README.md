@@ -1,4 +1,4 @@
-![FitApp Display / Sign In Page]("C:\Users\kierr\Desktop\FitApp.png")
+![FitApp Display / Sign In Page]("FitApp.png")
 
 
 # The Okayest Fitness App
