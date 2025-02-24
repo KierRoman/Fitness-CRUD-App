@@ -6,7 +6,7 @@
 ## Table of Contents
 ---
 
-- [Getting Started](#getting_started)
+- [Getting_Started](#getting_started)
 - [Attribution](#attribution)
 - [Technologies](#technologies)
 - [Next-Steps](#Next-Steps)
@@ -43,7 +43,7 @@ Here is a list of a few of the icons to make it as easy to understand as possibl
 <br>
 
 
-## Getting Started
+## Getting_Started
 ---
 <br>
 
