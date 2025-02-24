@@ -1,4 +1,4 @@
-#home-body{
+#home-body {
     background-image: url(https://t3.ftcdn.net/jpg/04/29/35/62/360_F_429356296_CVQ5LkC6Pl55kUNLqLisVKgTw9vjyif1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -13,15 +13,16 @@
     margin: 0 auto;
 }
 
-nav{
+nav {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     padding: 10px;
-    
+
 
 }
-#wrk-name{
+
+#wrk-name {
     margin: 0 auto;
     width: fit-content;
     display: flex;
@@ -29,13 +30,13 @@ nav{
     align-items: center;
 }
 
-#add-work{
+#add-work {
     text-align: center;
     padding: 5px;
 }
 
 
-#workouts-body{
+#workouts-body {
     position: relative;
     background-image: url(https://t3.ftcdn.net/jpg/03/03/44/82/360_F_303448274_0N7iYpZ7B8Er3z7iDRa70zhxihGfjpNZ.jpg);
     background-repeat: no-repeat;
@@ -51,24 +52,28 @@ nav{
     border-radius: 15px;
     overflow: auto;
     overflow-x: hidden;
-    
+
 }
 
 #workouts-body::before {
-    content: ""; /* Necessary to generate the overlay */
+    content: "";
+    /* Necessary to generate the overlay */
     position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5); /* This adds the dim effect */
-    border-radius: 15px; /* Match the border radius to the container */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* This adds the dim effect */
+    border-radius: 15px;
+    /* Match the border radius to the container */
 }
 
 /* Content within the #workouts-body container */
-#workouts-body > * {
+#workouts-body>* {
     position: relative;
-    z-index: 1; /* Ensure content sits above the overlay */
+    z-index: 1;
+    /* Ensure content sits above the overlay */
 }
 
 
@@ -80,7 +85,8 @@ nav{
     background-color: rgba(130, 0, 0, 0.341);
 }
 
-#workouts-body::-webkit-scrollbar, #show-body::-webkit-scrollbar{
+#workouts-body::-webkit-scrollbar,
+#show-body::-webkit-scrollbar {
     display: none;
 }
 
@@ -97,7 +103,7 @@ nav{
     align-content: center;
 }
 
-#show-body{
+#show-body {
     position: relative;
     background-image: url(https://t3.ftcdn.net/jpg/03/03/44/82/360_F_303448274_0N7iYpZ7B8Er3z7iDRa70zhxihGfjpNZ.jpg);
     background-repeat: no-repeat;
@@ -116,20 +122,24 @@ nav{
 }
 
 #show-body::before {
-    content: ""; /* Necessary to generate the overlay */
+    content: "";
+    /* Necessary to generate the overlay */
     position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5); /* This adds the dim effect */
-    border-radius: 15px; /* Match the border radius to the container */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* This adds the dim effect */
+    border-radius: 15px;
+    /* Match the border radius to the container */
 }
 
 /* Content within the #workouts-body container */
-#show-body > * {
+#show-body>* {
     position: relative;
-    z-index: 1; /* Ensure content sits above the overlay */
+    z-index: 1;
+    /* Ensure content sits above the overlay */
 }
 
 #show-body p {
@@ -148,17 +158,17 @@ nav{
     align-content: center;
 }
 
-#show-a{
-display: flex;
-justify-content: center;
+#show-a {
+    display: flex;
+    justify-content: center;
 }
 
-#new{
+#new {
     text-align: center;
 }
 
 
-#new-body{
+#new-body {
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(231, 4, 4, 0.632);
@@ -169,7 +179,7 @@ justify-content: center;
     flex-direction: column;
     gap: 20px;
 
-    
+
 }
 
 .form-buttons {
@@ -192,42 +202,43 @@ justify-content: center;
     margin: 0 auto;
 }
 
-#new-btns{
+#new-btns {
     padding: .5em;
     display: flex;
     justify-content: space-between;
 }
 
-a{
+a {
     text-align: center;
     color: white;
     transition: color 0.3s ease;
 }
 
 
-#textarea{
+#textarea {
     min-height: 20vh;
     color: white;
 }
 
-a:hover{
+a:hover {
     color: red;
 }
 
-#back{
+#back {
     border: transparent;
     background-color: transparent;
     transition: color 0.3s ease;
 }
 
-#back:hover{
+#back:hover {
     color: red;
 }
-ul{
+
+ul {
     padding: 0%;
 }
 
-button{
+button {
     background-color: darkred;
     border: none;
     padding: 5px 7.5px;
@@ -236,7 +247,8 @@ button{
     transition: background-color 0.5s ease;
 
 }
-button:hover{
+
+button:hover {
     background-color: rgb(180, 5, 5);
 }
 
@@ -246,7 +258,9 @@ nav i {
 
 
 
-
+#username, #password, #confirmPassword{
+    width: 40%;
+}
 
 
 input[type="text"],
@@ -268,8 +282,7 @@ input[type="text"]:focus,
 input[type="number"]:focus,
 textarea:focus,
 input[type="date"]:focus,
-input[type="password"]:focus 
-{
+input[type="password"]:focus {
     border-color: #4CAF50;
     outline: none;
 }
@@ -292,7 +305,7 @@ input[type="number"]:hover,
 textarea:hover,
 input[type="date"]:hover,
 input[type="password"]:hover {
-    border-color: #4CAF50;
+    border-color: #aab301;
 }
 
 /* Responsive Design */
