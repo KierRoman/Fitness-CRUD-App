@@ -42,13 +42,8 @@ nav {
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0 auto;
-    /* padding-left: 10px; */
     max-height: 60vh;
     max-width: 50vw;
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* align-items: center; */
-    /* border: 2px solid darkred; */
     border-radius: 15px;
     overflow: auto;
     overflow-x: hidden;
@@ -57,23 +52,18 @@ nav {
 
 #workouts-body::before {
     content: "";
-    /* Necessary to generate the overlay */
     position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
-    /* This adds the dim effect */
     border-radius: 15px;
-    /* Match the border radius to the container */
 }
 
-/* Content within the #workouts-body container */
 #workouts-body>* {
     position: relative;
     z-index: 1;
-    /* Ensure content sits above the overlay */
 }
 
 
@@ -93,10 +83,8 @@ nav {
 
 
 #workouts-body div {
-    /* background-color: blueviolet; */
     display: flex;
     flex-wrap: wrap;
-    /* gap: 10px; */
     justify-content: space-evenly;
     padding-top: 5px;
     padding-bottom: 10px;
@@ -107,15 +95,11 @@ nav {
     position: relative;
     background-image: url(https://t3.ftcdn.net/jpg/03/03/44/82/360_F_303448274_0N7iYpZ7B8Er3z7iDRa70zhxihGfjpNZ.jpg);
     background-repeat: no-repeat;
-    background-position: bottom;
     background-size: cover;
     margin: 0 auto;
     max-height: 60vh;
     max-width: 50vw;
-    /* display: flex; */
-    /* flex-direction: column; */
     align-items: center;
-    /* border: 2px solid darkred; */
     border-radius: 15px;
     overflow: auto;
     overflow-x: hidden;
@@ -123,23 +107,18 @@ nav {
 
 #show-body::before {
     content: "";
-    /* Necessary to generate the overlay */
     position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
-    /* This adds the dim effect */
     border-radius: 15px;
-    /* Match the border radius to the container */
 }
 
-/* Content within the #workouts-body container */
 #show-body>* {
     position: relative;
     z-index: 1;
-    /* Ensure content sits above the overlay */
 }
 
 #show-body p {
@@ -194,7 +173,6 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background-color: rgba(119, 0, 0, 0.598); */
     box-shadow: 0 4px 12px rgba(231, 4, 4, 0.632);
     max-width: 50vw;
     border-radius: 20px;
@@ -258,7 +236,9 @@ nav i {
 
 
 
-#username, #password, #confirmPassword{
+#username,
+#password,
+#confirmPassword {
     width: 40%;
 }
 
