@@ -6,7 +6,7 @@
 ## Table of Contents
 ---
 
-- [Deployment](#deployment)
+- [Getting Started](#getting_started)
 - [Attribution](#attribution)
 - [Technologies](#technologies)
 - [Next-Steps](#Next-Steps)
@@ -39,6 +39,22 @@ Here is a list of a few of the icons to make it as easy to understand as possibl
 
 
 <br>
+
+
+## Getting Started
+---
+<br>
+
+
+Link To Deploy App
+![]()
+
+My Planning Board
+![]()
+
+
+
+
 
 ## Attribution
 ---
