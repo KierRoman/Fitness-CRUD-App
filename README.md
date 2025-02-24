@@ -54,7 +54,7 @@ Link To Deploy App
 <br>
 
 My Planning Board
-![My_Trello_Board](https://trello.com/invite/b/67b271cd87c212ad418ef466/ATTI3f291c3838246faa6bf0e63d660a9342353303E5/fitness-crud-app)
+[My_Trello_Board](https://trello.com/invite/b/67b271cd87c212ad418ef466/ATTI3f291c3838246faa6bf0e63d660a9342353303E5/fitness-crud-app)
 
 
 
