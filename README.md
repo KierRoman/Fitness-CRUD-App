@@ -1,4 +1,4 @@
-![FitApp-Display/Sign-In-Page](FitApp.png)
+![FitApp-Display/Sign-In-Page](images/FitApp.png)
 
 
 # The Okayest Fitness App
@@ -17,7 +17,7 @@ Welcome to The Okayest Fitness App, the app that lets you create, update, and de
 Once you create an account and sign in, the app is pretty navigable. You have immediate access to your workouts page with the ability to add new workouts, and once workouts are created inside of these workouts pages you can add your own curated list of exercises with the intensity and level that you desire.
 
 Here is a list of a few of the icons to make it as easy to understand as possible:
-![home-button](home.png)
+![home-button](images/home.png)
 
 ## Attribution
 
