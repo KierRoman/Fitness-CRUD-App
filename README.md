@@ -4,7 +4,7 @@
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](contributing)
+- [Contributing](#contributing)
 
 
 //Intro Paragraph//
