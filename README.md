@@ -14,7 +14,7 @@
 ---
 <br>
 Welcome to The Okayest Fitness App, the app that lets you create, update, and delete workouts with ease. Whether you're putting together a new routine or tweaking an old one, FitFlow lets you add exercises, track progress, and keep things simple. No complicated features, just a straightforward way to manage your fitness plans and stay on top of your goals. Ready to get started? Let's build those workouts!
-
+<br>
 Once you create an account and sign in, the app is pretty navigable. You have immediate access to your workouts page with the ability to add new workouts, and once workouts are created inside of these workouts pages you can add your own curated list of exercises with the intensity and level that you desire.
 
 Here is a list of a few of the icons to make it as easy to understand as possible:
@@ -41,56 +41,49 @@ Here is a list of a few of the icons to make it as easy to understand as possibl
 <br>
 
 ## Attribution
+---
+
+Here are a few resources I used to create this applicaton.
+
+  * MDN WebDocs
+    
+  * StackOverflow
+
+  * W3Schools
+
+  * FontAwesome ( For icons used through app )
 
 
-M
-
-M
-
-M
-
-M
-
-M
-
-M
-
-M
-
-M
-
-M
-
-M
-
-M
-
-M
 
 ## Technologies
+---
 
-M
+  * Javascript
 
-M
+  * CSS
 
-M
+  * HTML
 
-M
+  * NPM
 
-M
+  * MongoDB
 
-M
+  * GitHub
 
-M
-
-M
-
-M
-
-m
+  * Node.js
 
 ## Next-Steps
+---
 
+Here are a few things I am thinking about adding to the current app...
+
+  *  A users community page to view other users in the databases workout pages
+
+  *  Updated CSS styling to make it even more visually appealing
+
+  *  Divide exercises up by the category of the exercises
+
+  *  Possibly implement an API to easily gain other pre-made workouts that users who don't want to build their own exercises can use
 
 
 
