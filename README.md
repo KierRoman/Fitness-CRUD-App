@@ -19,6 +19,7 @@ Once you create an account and sign in, the app is pretty navigable. You have im
 Here is a list of a few of the icons to make it as easy to understand as possible:
 
 
+
 ![home-button](images/home.png)  - This button will take you back to the homepage from anywhere in the app
 
 ![back-button](images/back.png)  - This button will take you back to the previous page from anywhere in the app
@@ -34,6 +35,7 @@ Here is a list of a few of the icons to make it as easy to understand as possibl
 ![add-button](images/plus.png)  - This button adds the specific workout/exercise to the database
 
 ![edit-button](images/edit.png)  - This button will update the current workout/exercise in the database
+
 
 
 
