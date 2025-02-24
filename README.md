@@ -29,7 +29,7 @@ Here is a list of a few of the icons to make it as easy to understand as possibl
 
 ![edit-button](images/edit.png)  - This button will take you to the edit page for the specific workout/exercise
 
-![delete-button](images/delete.png)  - This button will delete the specific workout/exercise from the database
+![delete-button](images/trash.png)  - This button will delete the specific workout/exercise from the database
 
 ![add-button](images/plus.png)  - This button adds the specific workout/exercise to the database
 
