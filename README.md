@@ -8,10 +8,10 @@
 
 
 * [Getting_Started](#getting_started)
-* [Wireframe](#wireframeimage)
 * [Attribution](#attribution)
 * [Technologies](#technologies)
 * [Next-Steps](#Next-Steps)
+* [Deployed Link](#deployment)
 
 ---
 <br>
@@ -49,9 +49,6 @@ Here is a list of a few of the icons to make it as easy to understand as possibl
 <br>
 
 
-Link To Deploy App
-<br>
-![]()
 
 <br>
 
@@ -59,8 +56,6 @@ My Planning Board
 <br>
 [My_Trello_Board](https://trello.com/invite/b/67b271cd87c212ad418ef466/ATTI3f291c3838246faa6bf0e63d660a9342353303E5/fitness-crud-app)
 
-## <a name="wireframeimage"></a>Wireframe Images
-![Wire Frame Image](images/Fit_App_CRUD_Wireframe.png)
 
 
 
@@ -112,3 +107,7 @@ Here are a few things I am thinking about adding to the current app...
 
 
 
+## <a name="deployment"></a>Deployed Link
+Link To Deploy App
+<br>
+![]()
