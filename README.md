@@ -60,7 +60,7 @@ My Planning Board
 [My_Trello_Board](https://trello.com/invite/b/67b271cd87c212ad418ef466/ATTI3f291c3838246faa6bf0e63d660a9342353303E5/fitness-crud-app)
 
 ## <a name="wireframeimage"></a>Wireframe Images
-![Wire Frame Image](Fit_App_CRUD_Wireframe.png)
+![Wire Frame Image](images/Fit_App_CRUD_Wireframe.png)
 
 
 
