@@ -17,8 +17,13 @@ const User = require('./models/user.js')
 
 const port = process.env.PORT ? process.env.PORT : '3000'
 
-mongoose.connect(process.env.MONGODB_URI)
-
+const main = async () => {
+    await mongoose.connect(process.env.MONGODB_URI)
+    app.listen(port, () => {
+        console.log(`App is running on port ${port}...`)
+    })
+}
+main()
 mongoose.connection.on('connected', () => {
     console.log(`Connected to MongoDB ${mongoose.connection.name}.`)
 })
@@ -55,7 +60,3 @@ app.use('/auth', authController)
 app.use(isSignedIn)
 app.use('/users/:userId/workouts', workoutsController)
 
-
-app.listen(port, () => {
-    console.log(`App is running on port ${port}...`)
-})
