@@ -6,10 +6,12 @@
 ## Table of Contents
 ---
 
-- [Getting_Started](#getting_started)
-- [Attribution](#attribution)
-- [Technologies](#technologies)
-- [Next-Steps](#Next-Steps)
+
+* [Getting_Started](#getting_started)
+* [Wireframe](#wireframeimage)
+* [Attribution](#attribution)
+* [Technologies](#technologies)
+* [Next-Steps](#Next-Steps)
 
 ---
 <br>
@@ -57,6 +59,9 @@ My Planning Board
 <br>
 [My_Trello_Board](https://trello.com/invite/b/67b271cd87c212ad418ef466/ATTI3f291c3838246faa6bf0e63d660a9342353303E5/fitness-crud-app)
 
+## <a name="wireframeimage"></a>Wireframe Images
+* Description of image location, or <img src="Fit_App_CRUD_Wireframe.png">
+
 
 
 
@@ -73,7 +78,6 @@ Here are a few resources I used to create this applicaton.
   * W3Schools
 
   * FontAwesome ( For icons used through app )
-
 
 
 ## Technologies
