@@ -6,16 +6,17 @@
 ## Table of Contents
 ---
 
-- [Getting_Started](#getting_started)
-- [Attribution](#attribution)
-- [Technologies](#technologies)
-- [Next-Steps](#Next-Steps)
+
+* [Getting_Started](#getting_started)
+* [Wireframe](#wireframeimage)
+* [Attribution](#attribution)
+* [Technologies](#technologies)
+* [Next-Steps](#Next-Steps)
 
 ---
 <br>
-Welcome to The Okayest Fitness App, the app that lets you create, update, and delete workouts with ease. Whether you're putting together a new routine or tweaking an old one, FitFlow lets you add exercises, track progress, and keep things simple. No complicated features, just a straightforward way to manage your fitness plans and stay on top of your goals. Ready to get started? Let's build those workouts!
-
-<br>
+Welcome to The Okayest Fitness App, the app that lets you create, update, and delete workouts with ease. Whether you're putting together a new routine or tweaking an old one, FitFlow lets you add exercises, track progress, and keep things simple. No complicated features, just a straightforward way to manage your fitness plans and stay on top of your goals. Ready to get started? Let's build those workouts!  
+<br><br>
 
 Once you create an account and sign in, the app is pretty navigable. You have immediate access to your workouts page with the ability to add new workouts, and once workouts are created inside of these workouts pages you can add your own curated list of exercises with the intensity and level that you desire.
 
@@ -58,6 +59,9 @@ My Planning Board
 <br>
 [My_Trello_Board](https://trello.com/invite/b/67b271cd87c212ad418ef466/ATTI3f291c3838246faa6bf0e63d660a9342353303E5/fitness-crud-app)
 
+## <a name="wireframeimage"></a>Wireframe Images
+* Description of image location, or <img src="C:\Users\kierr\Desktop\Fit_App_CRUD_Wireframe.png">
+
 
 
 
@@ -74,7 +78,6 @@ Here are a few resources I used to create this applicaton.
   * W3Schools
 
   * FontAwesome ( For icons used through app )
-
 
 
 ## Technologies
