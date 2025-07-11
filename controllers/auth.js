@@ -10,7 +10,9 @@ router.get('/sign-up', (req, res) => {
 });
 
 router.get('/sign-in', (req, res) => {
-  res.render('auth/sign-in.ejs');
+  res.render('auth/sign-in.ejs', {
+    message: req.flash('message')
+  });
 });
 
 router.get('/sign-out', (req, res) => {
@@ -23,13 +25,17 @@ router.post('/sign-up', async (req, res) => {
     // Check if the username is already taken
     const userInDatabase = await User.findOne({ username: req.body.username });
     if (userInDatabase) {
-      return res.send('Username already taken.');
+      req.flash('message', 'Username already taken.');
+      return res.redirect('/auth/sign-up')
+      // return res.send('Username already taken.');
     }
   
     // Username is not taken already!
     // Check if the password and confirm password match
     if (req.body.password !== req.body.confirmPassword) {
-      return res.send('Password and Confirm Password must match');
+      req.flash('message', 'Passwords must match');
+      return res.redirect('/auth/sign-up')
+      // return res.send('Password and Confirm Password must match');
     }
   
     // Must hash the password before sending to the database
@@ -37,9 +43,15 @@ router.post('/sign-up', async (req, res) => {
     req.body.password = hashedPassword;
   
     // All ready to create the new user!
-    await User.create(req.body);
-  
-    res.redirect('/auth/sign-in');
+   const newUser = await User.create(req.body);
+
+   req.session.userId = newUser._id
+
+   req.session.username = newUser.username
+
+   const message = req.flash('message')
+   
+    res.redirect('/');
   } catch (error) {
     console.log(error);
     res.redirect('/');
@@ -51,8 +63,11 @@ router.post('/sign-in', async (req, res) => {
     // First, get the user from the database
     const userInDatabase = await User.findOne({ username: req.body.username });
     if (!userInDatabase) {
-      return res.send('Login failed. Please try again.');
+        req.flash('message', 'Login failed. Please try again.')
+      // return res.send('Login failed. Please try again.');
+      return res.redirect('/auth/sign-in')
     }
+
   
     // There is a user! Time to test their password with bcrypt
     const validPassword = bcrypt.compareSync(
@@ -60,7 +75,9 @@ router.post('/sign-in', async (req, res) => {
       userInDatabase.password
     );
     if (!validPassword) {
-      return res.send('Login failed. Please try again.');
+      req.flash('message', 'Login failed. Please try again.')
+      // return res.send('Login failed. Please try again.');
+      return res.redirect('/auth/sign-in')
     }
   
     // There is a user AND they had the correct password. Time to make a session!
@@ -68,7 +85,8 @@ router.post('/sign-in', async (req, res) => {
     // If there is other data you want to save to `req.session.user`, do so here!
     req.session.user = {
       username: userInDatabase.username,
-      _id: userInDatabase._id
+      _id: userInDatabase._id,
+      message: req.flash('message')
     };
   
     res.redirect('/');
