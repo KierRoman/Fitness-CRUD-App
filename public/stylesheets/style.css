@@ -149,6 +149,9 @@ nav {
 
 .workout-card,
 .show-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     text-align: center;
     padding: 15px;
     border: 3px solid rgba(255, 0, 0, 0.576);
@@ -157,6 +160,7 @@ nav {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     transition: transform 0.4s ease;
 }
+
 
 .workout-card:hover, 
 .show-card:hover 
@@ -172,6 +176,15 @@ nav {
 #icons {
     display: flex;
     justify-content: space-evenly;
+    transition: box-shadow 0.4s ease;
+}
+
+#icons button {
+    transition: box-shadow 0.4s ease;
+}
+
+#icons button:hover {
+    box-shadow: 0 4px 12px red;
 }
 
 
@@ -180,7 +193,8 @@ nav {
 }
 
 
-#new-body {
+#new-body,
+#new-ex-body {
     background-color:rgba(99, 2, 2, 0.853);
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(231, 4, 4, 0.632);
@@ -190,29 +204,40 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    align-items: center;
 }
 
 
 #new-body input,
-#new-body textarea {
-    background-color: rgba(41, 34, 34, 0.453);
+#new-body textarea, 
+#new-ex-body input,
+#new-ex-body textarea {
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.75);
+    width: 70vw;
 }
 
 #new-body input:hover,
 #new-body textarea:hover,
 #new-body input:focus,
-#new-body textarea:focus {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.75);
+#new-body textarea:focus,
+#new-ex-body input:hover,
+#new-ex-body textarea:hover,
+#new-ex-body input:focus,
+#new-ex-body textarea:focus {
+    box-shadow: 0 4px 12px red;
 }
 
-.form-buttons {
+/* #new-body */
+
+/* .form-buttons {
     margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
-}
+} */
 
 
-#new-ex-body {
+/* #new-ex-body {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -222,12 +247,21 @@ nav {
     border-radius: 20px;
     padding: 2px;
     margin: 0 auto;
-}
+} */
 
 #new-btns {
     padding: .5em;
     display: flex;
     justify-content: space-between;
+}
+
+#new-btns button {
+    transition: box-shadow 0.4s ease;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+#new-btns button:hover {
+    box-shadow: 0 4px 12px red;
 }
 
 a {
@@ -323,11 +357,13 @@ textarea {
 
 
 label {
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 1);
     font-size: larger;
     color: #ffffff;
     margin-bottom: 5px;
     font-weight: bold;
     display: block;
+    padding: 10px;
 }
 
 

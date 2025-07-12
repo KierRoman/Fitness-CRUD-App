@@ -1,47 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Exercise List</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1 id="new">Exercises</h1>
     <div id="new-ex-body">
-        <form action="/users/<%= user._id %>/workouts/<%=workouts._id%>/" method="POST">
-            <div id="new-btns"> <button type="button" onclick="window.history.back();"><i class="fa-solid fa-left-long"></i></button>
-                <button type="submit"><i class="fa-solid fa-plus"></i></button>
-            </div>
-            <div>
-                <label for="category">Category:</label>
-                <select name="category" id="category">
-                    <option value="weights">Weights</option>
-                    <option value="cardio">Cardio</option>
-                </select>
-            </div><br>
+      <form
+        action="/users/<%= user._id %>/workouts/<%=workouts._id%>/"
+        method="POST"
+      >
+        <div id="new-btns">
+          <button type="button" onclick="window.history.back();">
+            <i class="fa-solid fa-left-long"></i>
+          </button>
+          <button type="submit"><i class="fa-solid fa-plus"></i></button>
+        </div>
+        <div class="form-buttons">
+          <label for="category">Category:</label>
+          <select name="category" id="category">
+            <option value="weights">Weights</option>
+            <option value="cardio">Cardio</option>
+          </select>
+        </div>
+        
+
+        <div class="form-buttons">
             <label for="name">Exercise Name:</label>
-            <input type="text" name="name" required><br>
+            <input type="text" name="name" required />
+        </div>
 
+        <div class="form-buttons">
             <label for="reps">Reps:</label>
-            <input type="number" name="reps"><br>
+            <input type="number" name="reps" />
+        </div>
 
+        <div class="form-buttons">
             <label for="sets">Sets:</label>
-            <input type="number" name="sets"><br>
+            <input type="number" name="sets" />
+        </div>
 
-            <label for="duration">Duration (minutes, for cardio):</label><br>
-            <input type="number" name="duration"><br>
+        <div class="form-buttons">
+            <label for="duration">Duration (minutes, for cardio):</label><br />
+            <input type="number" name="duration" />
+        </div>
 
-            <label for="notes">Notes:</label><br>
+        <div class="form-buttons">
+            <label for="notes">Notes:</label>
             <textarea id="textarea" name="notes"></textarea>
-        </form>
+        </div>
+      </form>
     </div>
-
-</body>
-
+  </body>
 </html>

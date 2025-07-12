@@ -14,14 +14,15 @@
 </head>
 
 <body>
+    <h1 id="new">Workouts</h1>
     <div id="new-body">
         <form action="/users/<%= user._id %>/workouts/<%=workouts._id%>?_method=PUT" method="POST">
-            <div class="form-buttons"> <button type="button" onclick="window.history.back();"><i
+            <div id="new-btns"> <button type="button" onclick="window.history.back();"><i
                         class="fa-solid fa-left-long"></i></button>
                 <button type="submit"><i class="fa-solid fa-cloud-arrow-up"></i></button>
             </div>
 
-            <div class="form-buttons">
+            <div class="new-btns">
                 <label for="name">Name of Workout:</label>
                 <input type="text" name="name" id="name" value="<%=workouts.name%>">
                 <br>

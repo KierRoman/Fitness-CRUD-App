@@ -15,6 +15,7 @@
     <% users.forEach(user => {%>
         <li>
         <%= user.username %> <br>
+        <%= user.username %> has <%= user.workouts.length %> <%= user.workouts.length === 1 ? 'workout' : 'workouts' %> currently.
         </li>
     </ul>
 <% }) %>
