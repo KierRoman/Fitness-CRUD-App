@@ -478,9 +478,10 @@ input[type="password"]:hover {
     width: 100%;
     height: 100%;
     position: relative;
+    transition: all 0.4s ease;
 }
 
-.entry-wrapper:hover .workout-entry {
+/* .entry-wrapper:hover .workout-entry {
     position: absolute;
     top: 5px;
     left: 5px;
@@ -491,6 +492,15 @@ input[type="password"]:hover {
     z-index: 999;
     box-shadow: 0 4px 12px rgba(255, 0, 0, 0.6);
     white-space: normal;
+} */
+
+.calendar-cell:hover .workout-entry {
+    max-height: none;
+    padding: 10px;
+    font-size: 14px;
+    background-color: #e80303;
+    z-index: 999;
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.6);
 }
 
 #work-top {
@@ -536,7 +546,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     }
 
     #icons button {
-        font-size: 4px;
+        font-size: 6px;
     }
 
 }
