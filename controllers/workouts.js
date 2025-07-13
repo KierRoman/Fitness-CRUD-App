@@ -6,8 +6,24 @@ const User = require('../models/user.js');
 //INDEX
 router.get('/', async (req, res) => {
     const user = await User.findById(req.session.user._id)
+
+    const sortedWorkouts = [...user.workouts].sort((a, b) => new Date(a.date) - new Date(b.date));
+
+    let month = parseInt(req.query.month);
+    let year = parseInt(req.query.year);
+
+    if(isNaN(month) || isNaN(year)) {
+        const todayFallback = new Date();
+        month = todayFallback.getMonth();
+        year = todayFallback.getFullYear();
+    
+    }
+
     res.render('workouts/index.ejs', {
-        workouts: user.workouts
+        user,
+        workouts: sortedWorkouts,
+        month,
+        year
     })
 })
 
