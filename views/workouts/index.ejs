@@ -15,13 +15,19 @@
 </head>
 <body>
 
-  <button id="add-work">
-    <a href="/users/<%= user._id %>/workouts/new"><strong>Add a Workout</strong></a>
-  </button>
-
+  <div id="work-top">
+    <button id="add-work">
+      <a href="/users/<%= user._id %>/workouts/new"><strong>Add a Workout</strong></a>
+    </button>
+    <div id="date-selector">
+      <label for="search-date"><strong>Search:</strong></label>
+      <input type="date" id="search-date" name="search-date" />
+    </div>
+  </div>
   <div id="workouts-body">
 
     <% if (workouts.length > 0) { %>
+
 
       <% 
       // Prepare calendar data before rendering
@@ -74,16 +80,34 @@
             displayYear === currentDate.getFullYear()
           );
         %>
-          <div class="calendar-cell <%= isToday ? 'today' : '' %>">
+
+        <%
+          const isoDate = new Date(displayYear, displayMonth, day).toISOString().split('T')[0];
+        %>
+
+          <div class="calendar-cell <%= isToday ? 'today' : '' %>" data-date="<%= isoDate %>">
             <div class="date-number"><%= day %></div>
 
             <% if(workoutsByDay[day]) { %>
               <% workoutsByDay[day].forEach(w => { %>
-                <div class="workout-entry">
-                  <a href="/users/<%= user._id %>/workouts/<%= w._id %>"><%= w.name %></a>
-                  <a class="edit-icon" href="/users/<%= user._id %>/workouts/<%= w._id %>/edit" title="Edit Workout">
-                    <i class="fas fa-edit"></i>
-                  </a>
+                <div class="entry-wrapper">
+                  <div class="workout-entry">
+                    <a href="/users/<%= user._id %>/workouts/<%= w._id %>"><%= w.name %></a><br>
+                    <div id="icons">
+                      <a class="edit-icon" href="/users/<%= user._id %>/workouts/<%= w._id %>/edit" title="Edit Workout">
+                        <button><i class="fas fa-edit"></i></button>
+                      </a>
+                  
+                      <form
+                        action="/users/<%=user._id%>/workouts/<%=w._id%>?_method=DELETE"
+                        method="POST"
+                      >
+                        <button>
+                          <i class="fa-solid fa-trash"></i>
+                        </button>
+                      </form>
+                    </div>
+                  </div>
                 </div>
               <% }) %>
             <% } %>
@@ -101,5 +125,20 @@
 
   <%- include('../partials/_backHome.ejs') %>
 
+  <script>
+  document.getElementById("search-date").addEventListener("change", function () {
+    const selectedDate = new Date(this.value);
+    if (isNaN(selectedDate)) return;
+
+    const year = selectedDate.getFullYear();
+    const month = selectedDate.getMonth(); // 0-based (Jan = 0)
+    
+    const url = new URL(window.location.href);
+    url.searchParams.set("month", month);
+    url.searchParams.set("year", year);
+
+    window.location.href = url.toString();
+  });
+</script>
 </body>
 </html>
