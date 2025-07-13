@@ -21,29 +21,70 @@
         <div id="new-btns"> <button type="button" onclick="window.history.back();"><i class="fa-solid fa-left-long"></i></button>
             <button type="submit"><i class="fa-solid fa-cloud-arrow-up"></i></button>
         </div>
-        <div>
+        <div id="cat-field">
             <label for="category">Category:</label>
             <select name="category" id="category">
                 <option value="weights" <%=exercises.category==='weights' ? 'selected' : '' %>>Weights</option>
                 <option value="cardio" <%=exercises.category==='cardio' ? 'selected' : '' %>>Cardio</option>
             </select>
         </div>
-        <label for="name">Exercise Name:</label>
-        <input type="text" name="name" value="<%=exercises.name%>" required>
 
-        <label for="reps">Reps:</label>
-        <input type="number" name="reps" value="<%=exercises.reps%>">
+        <div class="form-buttons">
+            <label for="name">Exercise Name:</label>
+            <input type="text" name="name" value="<%=exercises.name%>" required>
+        </div>
 
-        <label for="sets">Sets:</label>
-        <input type="number" name="sets" value="<%=exercises.sets%>">
+        <div class="form-buttons">
+            <label for="reps">Reps:</label>
+            <input type="number" name="reps" value="<%=exercises.reps%>">
+        </div>
 
-        <label for="duration">Duration (minutes, for cardio):</label>
-        <input type="number" name="duration" value="<%=exercises.duration%>">
+        <div class="form-buttons">
+            <label for="sets">Sets:</label>
+            <input type="number" name="sets" value="<%=exercises.sets%>">
+        </div>
 
-        <label for="notes">Notes:</label>
-        <textarea id="textarea" name="notes"><%= exercises.notes%></textarea>
+        <div class="form-buttons">
+            <label for="duration">Duration (minutes, for cardio):</label>
+            <input type="number" name="duration" value="<%=exercises.duration%>">
+        </div>
+
+        <div class="form-buttons">
+            <label for="notes">Notes:</label>
+            <textarea id="textarea" name="notes"><%= exercises.notes%></textarea>
+        </div>
     </form>
 </div>
+
+<script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const catSelect = document.getElementById("category");
+            const nameField = document.querySelector('input[name="name"]').parentElement;
+            const repsField = document.querySelector('input[name="reps"]').parentElement;
+            const setsField = document.querySelector('input[name="sets"]').parentElement;
+            const durationField = document.querySelector('input[name="duration"]').parentElement;
+
+            function updateFormFields() {
+                const category = catSelect.value;
+
+                if (category === "weights") {
+                    nameField.style.display = "block";
+                    repsField.style.display = "block";
+                    setsField.style.display = "block";
+                    durationField.style.display = "none";
+                } else if (category === "cardio") {
+                    nameField.style.display = "block";
+                    repsField.style.display = "none";
+                    setsField.style.display = "none";
+                    durationField.style.display = "block"; 
+                }
+            }
+
+            updateFormFields();
+
+            catSelect.addEventListener("change", updateFormFields);
+        })
+    </script>
 
 </body>
 

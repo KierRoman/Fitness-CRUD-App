@@ -27,8 +27,8 @@
           </button>
           <button type="submit"><i class="fa-solid fa-plus"></i></button>
         </div>
-        <div class="form-buttons">
-          <label for="category">Category:</label>
+        <div id="cat-field">
+          <label for="category">Category:</label><br>
           <select name="category" id="category">
             <option value="weights">Weights</option>
             <option value="cardio">Cardio</option>
@@ -62,5 +62,35 @@
         </div>
       </form>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const catSelect = document.getElementById("category");
+            const nameField = document.querySelector('input[name="name"]').parentElement;
+            const repsField = document.querySelector('input[name="reps"]').parentElement;
+            const setsField = document.querySelector('input[name="sets"]').parentElement;
+            const durationField = document.querySelector('input[name="duration"]').parentElement;
+
+            function updateFormFields() {
+                const category = catSelect.value;
+
+                if (category === "weights") {
+                    nameField.style.display = "block";
+                    repsField.style.display = "block";
+                    setsField.style.display = "block";
+                    durationField.style.display = "none";
+                } else if (category === "cardio") {
+                    nameField.style.display = "block";
+                    repsField.style.display = "none";
+                    setsField.style.display = "none";
+                    durationField.style.display = "block"; 
+                }
+            }
+
+            updateFormFields();
+
+            catSelect.addEventListener("change", updateFormFields);
+        })
+    </script>
   </body>
 </html>

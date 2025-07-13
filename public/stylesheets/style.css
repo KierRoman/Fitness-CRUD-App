@@ -2,7 +2,7 @@ body {
     color:#ffffff;
     text-shadow: 2px 3px rgba(75, 2, 2, 0.5);
     background-color: black;
-    margin-top: 10%;
+    margin-top: 3%;
 }
 #home-body {
     background-image: url(https://t3.ftcdn.net/jpg/04/29/35/62/360_F_429356296_CVQ5LkC6Pl55kUNLqLisVKgTw9vjyif1.jpg);
@@ -199,12 +199,12 @@ nav {
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(231, 4, 4, 0.632);
     max-width: 600px;
-    margin: 30px auto;
+    margin: 0 auto;
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    align-items: center;
+    /* align-items: center; */
 }
 
 
@@ -214,7 +214,7 @@ nav {
 #new-ex-body textarea {
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.75);
-    width: 70vw;
+    width: 75%;
 }
 
 #new-body input:hover,
@@ -230,24 +230,13 @@ nav {
 
 /* #new-body */
 
-/* .form-buttons {
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-} */
-
-
-/* #new-ex-body {
+.form-buttons {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 12px rgba(231, 4, 4, 0.632);
-    max-width: 50vw;
-    border-radius: 20px;
-    padding: 2px;
-    margin: 0 auto;
-} */
+    text-align: center;
+}
+
 
 #new-btns {
     padding: .5em;
@@ -290,9 +279,6 @@ a:hover {
     color: red;
 }
 
-ul {
-    padding: 0%;
-}
 
 button {
     color: #ffffff;
@@ -366,6 +352,26 @@ label {
     padding: 10px;
 }
 
+/* select {
+    padding: 10px;
+} */
+
+#cat-field {
+    justify-content: center;
+    display: flex;
+    gap: 15%;
+}
+
+#cat-field select {
+    margin-top: 12.5px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.75);
+    border: 2px solid #6c0101;
+    color: white;
+    font-weight: bold;
+    height: fit-content;
+    padding: 2px;
+}
 
 input[type="text"]:hover,
 input[type="number"]:hover,
