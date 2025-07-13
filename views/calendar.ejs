@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workout Calendar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="/stylesheets/calendar.css" />
+ 
+</head>
+<body>
+
+  <h1 style="text-align: center;">
+    <%= new Date(year, month).toLocaleString('default', { month: 'long', year: 'numeric' }) %>
+  </h1>
+
+  <div class="calendar-nav">
+    <a href="?month=<%= month === 0 ? 11 : month - 1 %>&year=<%= month === 0 ? year - 1 : year %>">&laquo; Previous</a>
+    <a href="?month=<%= month === 11 ? 0 : month + 1 %>&year=<%= month === 11 ? year + 1 : year %>">Next &raquo;</a>
+  </div>
+
+  <div class="calendar-header">
+    <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+  </div>
+
+  <div class="calendar-grid">
+    <%
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+      const firstDayOfWeek = new Date(year, month, 1).getDay(); // 0 = Sunday
+      const workoutsByDay = {};
+
+      workouts.forEach(w => {
+        const d = new Date(w.date);
+        if (d.getMonth() === month && d.getFullYear() === year) {
+          const day = d.getDate();
+          if (!workoutsByDay[day]) workoutsByDay[day] = [];
+          workoutsByDay[day].push(w);
+        }
+      });
+
+      // Blank cells before the 1st of the month
+      for (let i = 0; i < firstDayOfWeek; i++) {
+    %>
+      <div class="calendar-cell empty"></div>
+    <% } %>
+
+    <% for (let day = 1; day <= daysInMonth; day++) { %>
+      <div class="calendar-cell">
+        <div class="date-number"><%= day %></div>
+        <% if (workoutsByDay[day]) { %>
+          <% workoutsByDay[day].forEach(workout => { %>
+            <div class="workout-entry">
+              <a href="/users/<%= user._id %>/workouts/<%= workout._id %>">
+                <%= workout.name %>
+              </a>
+            </div>
+          <% }) %>
+        <% } %>
+      </div>
+    <% } %>
+  </div>
+
+  <%- include('../partials/_backHome.ejs') %>
+</body>
+</html>
