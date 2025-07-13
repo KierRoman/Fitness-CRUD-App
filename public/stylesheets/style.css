@@ -422,7 +422,7 @@ input[type="password"]:hover {
 
 .calendar-cell {
   background: rgba(231, 4, 4, 0.432);
-  height: 90px;
+  height: 95px;
   padding: 5px;
   border: 1px solid rgba(0, 0, 0, 0.05);
   position: relative;
@@ -457,6 +457,7 @@ input[type="password"]:hover {
     border-radius: 4px;
     overflow: hidden;
     white-space: normal;
+    text-overflow: ellipsis;
     max-height: 40px;
     line-height: 1.2;
     z-index: 1;
@@ -481,26 +482,13 @@ input[type="password"]:hover {
     transition: all 0.4s ease;
 }
 
-/* .entry-wrapper:hover .workout-entry {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    width: 100%;
+.entry-wrapper:hover .workout-entry {
     max-height: none;
-    overflow: visible;
-    background-color: #e80303;
-    z-index: 999;
-    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.6);
-    white-space: normal;
-} */
-
-.calendar-cell:hover .workout-entry {
-    max-height: none;
-    padding: 10px;
+    padding: 5px;
     font-size: 14px;
     background-color: #e80303;
-    z-index: 999;
     box-shadow: 0 4px 12px rgba(255, 0, 0, 0.6);
+    z-index: 2;
 }
 
 #work-top {
