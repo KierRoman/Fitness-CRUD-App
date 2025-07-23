@@ -1,60 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Workouts</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Workouts</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+<body>
 
-  <body>
+  <div id="work-top">
     <button id="add-work">
-      <a href="/users/<%=user._id%>/workouts/new"><strong>Add a Workout</strong></a>
+      <a href="/users/<%= user._id %>/workouts/new"><strong>Add a Workout</strong></a>
     </button>
-    <div id="workouts-body">
-      <% if (workouts.length> 0) { %>
-        <div class="workout-grid">
-          <% workouts.forEach(workout=> { %> <% if(workout.name) {%>
-          <div class="workout-card">
-            <a
-              id="wrk-name"
-              href="/users/<%=user._id%>/workouts/<%=workout._id%>"
-            >
-              <%= workout.name %>
-            </a>
-            <br /><br />
-            <strong>Date:</strong>
-            <%= new Date(workout.date).toLocaleDateString() %> <br /><br />
-            <div id="icons">
-              <a href="/users/<%=user._id%>/workouts/<%=workout._id%>/edit">
-                <button style="font-size: 10px">
-                  <i class="fa-solid fa-file-pen"></i>
-                </button>
-              </a>
-              <form
-                action="/users/<%=user._id%>/workouts/<%=workout._id%>?_method=DELETE"
-                method="POST"
-              >
-                <button style="font-size: 10px">
-                  <i class="fa-solid fa-trash"></i>
-                </button>
-              </form>
-            </div>
-            <%}%>
-          </div>
-          <% }) %>
-        </div>
-      <% } else { %>
-      <p>No workouts available.</p>
-      <% } %>
+    <div id="date-selector">
+      <label for="search-date"><strong>Search:</strong></label>
+      <input type="date" id="search-date" name="search-date" />
     </div>
-    <%- include('../partials/_backHome.ejs')%>
-  </body>
+  </div>
+  <div id="workouts-body">
+
+    <% if (workouts.length > 0) { %>
+
+
+      <% 
+      // Prepare calendar data before rendering
+      const currentDate = new Date();
+      const displayMonth = Number(month);
+      const displayYear = Number(year);
+
+      const daysInMonth = new Date(displayYear, displayMonth + 1, 0).getDate();
+      const firstDayOfMonth = new Date(displayYear, displayMonth, 1).getDay();
+
+      const workoutsByDay = {};
+      workouts.forEach(workout => {
+        const wDate = new Date(workout.date);
+        if (wDate.getFullYear() === displayYear && wDate.getMonth() === displayMonth) {
+          const dayNum = wDate.getDate();
+          if (!workoutsByDay[dayNum]) workoutsByDay[dayNum] = [];
+          workoutsByDay[dayNum].push(workout);
+        }
+      });
+
+      const headerDate = new Date(displayYear, displayMonth);
+      const formattedMonthYear = headerDate.toLocaleString('default', { month: 'long', year: 'numeric' });
+      %>
+
+      <h2 style="text-align: center;"><%= formattedMonthYear %></h2>
+
+      <div class="calendar-nav" style="text-align: center; margin-bottom: 20px;">
+        <a href="?month=<%= displayMonth === 0 ? 11 : displayMonth - 1 %>&year=<%= displayMonth === 0 ? displayYear - 1 : displayYear %>">&laquo; Prev</a>
+        &nbsp;|&nbsp;
+        <a href="?month=<%= displayMonth === 11 ? 0 : displayMonth + 1 %>&year=<%= displayMonth === 11 ? displayYear + 1 : displayYear %>">Next &raquo;</a>
+      </div>
+
+      <div class="calendar-header">
+        <% ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].forEach(day => { %>
+          <div><%= day %></div>
+        <% }) %>
+      </div>
+
+      <div class="calendar-grid">
+
+        <% // Empty cells before first day %>
+        <% for(let i = 0; i < firstDayOfMonth; i++) { %>
+          <div class="calendar-cell empty"></div>
+        <% } %>
+
+        <% for(let day = 1; day <= daysInMonth; day++) { 
+          const isToday = (
+            day === currentDate.getDate() &&
+            displayMonth === currentDate.getMonth() &&
+            displayYear === currentDate.getFullYear()
+          );
+        %>
+
+        <%
+          const isoDate = new Date(displayYear, displayMonth, day).toISOString().split('T')[0];
+        %>
+
+          <div class="calendar-cell <%= isToday ? 'today' : '' %>" data-date="<%= isoDate %>">
+            <div class="date-number"><%= day %></div>
+
+            <% if(workoutsByDay[day]) { %>
+              <% workoutsByDay[day].forEach(w => { %>
+                <div class="entry-wrapper">
+                  <div class="workout-entry">
+                    <a href="/users/<%= user._id %>/workouts/<%= w._id %>"><%= w.name %></a><br>
+                    <div id="icons">
+                      <a class="edit-icon" href="/users/<%= user._id %>/workouts/<%= w._id %>/edit" title="Edit Workout">
+                        <button><i class="fas fa-edit"></i></button>
+                      </a>
+                  
+                      <form
+                        action="/users/<%=user._id%>/workouts/<%=w._id%>?_method=DELETE"
+                        method="POST"
+                      >
+                        <button>
+                          <i class="fa-solid fa-trash"></i>
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              <% }) %>
+            <% } %>
+          </div>
+        <% } %>
+
+      </div>
+
+    <% } else { %>
+
+      <p style="text-align:center;">No workouts available.</p>
+
+    <% } %>
+  </div>
+
+  <%- include('../partials/_backHome.ejs') %>
+
+  <script>
+  document.getElementById("search-date").addEventListener("change", function () {
+    const selectedDate = new Date(this.value);
+    if (isNaN(selectedDate)) return;
+
+    const year = selectedDate.getFullYear();
+    const month = selectedDate.getMonth(); // 0-based (Jan = 0)
+    
+    const url = new URL(window.location.href);
+    url.searchParams.set("month", month);
+    url.searchParams.set("year", year);
+
+    window.location.href = url.toString();
+  });
+
+
+  
+</script>
+</body>
 </html>

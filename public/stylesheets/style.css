@@ -46,9 +46,7 @@ nav {
     text-decoration: none;
 }
 
-#wrk-name:hover {
-    text-decoration: underline;
-}
+
 
 #add-work,
 #add-exercise {
@@ -71,7 +69,7 @@ nav {
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0 auto;
-    margin-bottom: 5%;
+    margin-bottom: 1%;
     max-height: 80vh;
     max-width: 85vw;
     border-radius: 15px;
@@ -180,11 +178,15 @@ nav {
 }
 
 #icons button {
+    font-size: 8px;
+    border: none;
+    background-color: #6c0101;
     transition: box-shadow 0.4s ease;
 }
 
 #icons button:hover {
     box-shadow: 0 4px 12px red;
+    background-color: rgb(180, 5, 5);
 }
 
 
@@ -382,6 +384,136 @@ input[type="password"]:hover {
     box-shadow: 0 4px 12px rgba(250, 0, 0, 0.576);
 }
 
+
+.alert {
+    color: red;
+    padding: 15px;
+    padding-top: 50px;
+    border-radius: 5px;
+    /* margin-bottom: 20px; */
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+.calendar-header,
+.calendar-grid {
+    max-width: 90%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    margin-left: 5%;
+}
+
+.calendar-header div {
+    background: rgba(231, 4, 4, 0.332);
+  font-weight: bold;
+  padding: 10px 0;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.calendar-grid {
+  gap: 1px;
+  background-color: transparent;
+  overflow: visible;
+}
+
+.calendar-cell {
+  background: rgba(231, 4, 4, 0.432);
+  height: 95px;
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+  text-align: left;
+  overflow: visible;
+  z-index: 0;
+}
+
+
+.calendar-cell.empty {
+  background: transparent;
+  border: none;
+}
+
+.date-number {
+  font-size: 12px;
+  font-weight: bold;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #ffffff;
+}
+
+.workout-entry {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 10px;
+    background: #e80303;
+    padding: 4px 6px;
+    font-size: 13px;
+    border-radius: 4px;
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+    max-height: 40px;
+    line-height: 1.2;
+    z-index: 1;
+    transition: all 0.4s ease;
+}
+
+.workout-entry a {
+    text-decoration: none;
+}
+
+
+
+.calendar-cell.today {
+    border: 2px solid rgb(180, 5, 5);
+    background-color: #2f0303;
+}
+
+.entry-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+.entry-wrapper:hover .workout-entry {
+    max-height: none;
+    padding: 5px;
+    font-size: 14px;
+    background-color: #e80303;
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.6);
+    z-index: 2;
+}
+
+#work-top {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+#work-top button {
+    height: fit-content;
+    margin-top: 2%;
+}
+
+#date-selector {
+    margin-right: 7.5%;
+    display: flex;
+    align-items: center;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* makes the calendar icon white */
+  cursor: pointer;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     #new-body {
@@ -400,18 +532,9 @@ input[type="password"]:hover {
     textarea {
         font-size: 14px;
     }
-}
 
-.alert {
-    color: red;
-    padding: 15px;
-    padding-top: 50px;
-    border-radius: 5px;
-    /* margin-bottom: 20px; */
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
+    #icons button {
+        font-size: 6px;
+    }
+
+}

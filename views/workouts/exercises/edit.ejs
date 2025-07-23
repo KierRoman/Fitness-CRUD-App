@@ -59,25 +59,31 @@
 <script>
         document.addEventListener("DOMContentLoaded", function () {
             const catSelect = document.getElementById("category");
-            const nameField = document.querySelector('input[name="name"]').parentElement;
-            const repsField = document.querySelector('input[name="reps"]').parentElement;
-            const setsField = document.querySelector('input[name="sets"]').parentElement;
-            const durationField = document.querySelector('input[name="duration"]').parentElement;
+            
+            const repsInput = document.querySelector('input[name="reps"]');
+            const setsInput = document.querySelector('input[name="sets"]');
+            const durationInput = document.querySelector('input[name="duration"]');
+
+            const repsField = repsInput.parentElement;
+            const setsField = setsInput.parentElement;
+            const durationField = durationInput.parentElement;
 
             function updateFormFields() {
                 const category = catSelect.value;
 
                 if (category === "weights") {
-                    nameField.style.display = "block";
                     repsField.style.display = "block";
                     setsField.style.display = "block";
                     durationField.style.display = "none";
+                    durationInput.value = "";
                 } else if (category === "cardio") {
-                    nameField.style.display = "block";
                     repsField.style.display = "none";
                     setsField.style.display = "none";
-                    durationField.style.display = "block"; 
-                }
+                    durationField.style.display = "block";
+
+                    setsInput.value = "";
+                    repsInput.value = "";
+                  }
             }
 
             updateFormFields();
