@@ -10,15 +10,27 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="user-name">
+        <h2><%= user.username %></h2>
+    </div>
+    <div id="info"> <strong>See how active other users are!</strong> </div>
     <% if (users.length > 0) { %>
-    <ul>
+    <div id="users">
     <% users.forEach(user => {%>
-        <li>
-        <%= user.username %> <br>
-        <%= user.username %> has <%= user.workouts.length %> <%= user.workouts.length === 1 ? 'workout' : 'workouts' %> currently.
-        </li>
-    </ul>
-<% }) %>
+        <table id="users-card">
+            <thead>
+                <tr>
+                    <th><strong><%= user.username %></strong></th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><%= user.workouts.length %> <%= user.workouts.length === 1 ? 'workout' : 'workouts' %> currently.</td>
+                </tr>
+            </tbody>
+        </table>
+        <% }) %>
+    </div>
 <% } %>
     
 <%- include('../partials/_backHome.ejs')%>
