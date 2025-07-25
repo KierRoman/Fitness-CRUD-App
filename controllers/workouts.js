@@ -115,8 +115,20 @@ router.put('/:workoutId/exercises/:exerciseId', async (req, res) => {
 //CREATE
 router.post('/', async (req, res) => {
     try {
-        const user = await User.findById(req.session.user._id)
-        user.workouts.push(req.body)
+        const user = await User.findById(req.session.user._id);
+        const { name, duration, notes } = req.body;
+
+        const dateInput = req.body.date;
+        const localMidnight = new Date(dateInput + 'T00:00:00');
+
+        const newWorkout = {
+            name,
+            duration,
+            notes,
+            date: localMidnight,
+        };
+
+        user.workouts.push(newWorkout)
         await user.save()
         res.redirect(`/users/${user._id}/workouts`)
     } catch (err) {
